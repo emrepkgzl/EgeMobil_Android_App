@@ -19,7 +19,7 @@ public class ControlScreen extends AppCompatActivity {
         setContentView(R.layout.activity_control_screen);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        button3 = findViewById(R.id.imageButton6);
+        button3 = findViewById(R.id.imageButton);
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,7 +28,7 @@ public class ControlScreen extends AppCompatActivity {
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        final Intent intent = new Intent(ControlScreen.this, MainActivity.class);
+                        final Intent intent = new Intent(ControlScreen.this, ControlScreen2.class);
                         startActivity(intent);
                     }
                 }, 0);

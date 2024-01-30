@@ -17,7 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EgeMobil"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ControlScreen2"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -48,8 +50,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name="org.eclipse.paho.android.service.MqttService" >
-        </service>
+
+        <service android:name="org.eclipse.paho.android.service.MqttService"></service>
     </application>
 
 </manifest>
