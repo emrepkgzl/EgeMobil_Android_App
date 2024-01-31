@@ -11,7 +11,7 @@ import android.view.View;
 
 public class ControlScreen extends AppCompatActivity {
 
-    private static ImageButton button3;
+    private static ImageButton button1, button3, button4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +19,28 @@ public class ControlScreen extends AppCompatActivity {
         setContentView(R.layout.activity_control_screen);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        button3 = findViewById(R.id.imageButton);
+        button1 = findViewById(R.id.imageButton4);
+        button3 = findViewById(R.id.imageButton6);
+        button4 = findViewById(R.id.imageButton);
 
-        button3.setOnClickListener(new View.OnClickListener() {
+        initConnectButton();
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        final Intent intent = new Intent(ControlScreen.this, MainActivity.class);
+                        startActivity(intent);
+                    }
+                }, 0);
+
+            }
+        });
+
+        button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -36,5 +55,36 @@ public class ControlScreen extends AppCompatActivity {
             }
         });
 
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        final Intent intent = new Intent(ControlScreen.this, MainActivity.class);
+                        startActivity(intent);
+                    }
+                }, 0);
+
+            }
+        });
+
+    }
+
+    private void initConnectButton()
+    {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                if(!MainActivity.isConnected) {
+                    button1.setImageResource(R.drawable.signal_stream);
+                }
+                else
+                {
+                    button1.setImageResource(R.drawable.signal_stream_slash);
+                }
+            }
+        });
     }
 }

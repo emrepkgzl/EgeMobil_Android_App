@@ -97,6 +97,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="text"
+            android:password="true"
             android:text="EgeMobil"
             android:textColor="#E7F0F5"
             android:textSize="20sp" />

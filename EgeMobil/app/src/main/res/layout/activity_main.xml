@@ -75,7 +75,7 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Speed: N/A"
+                android:text="Speed: 20km/h"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp" />
 
@@ -84,7 +84,7 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Angle: N/A"
+                android:text="Angle: 10°"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp" />
 
@@ -100,7 +100,7 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Acclr: N/A"
+                android:text="Acclr: 40%"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp" />
 
@@ -109,7 +109,7 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Brake: N/A"
+                android:text="Brake: 0%"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp" />
 
@@ -125,7 +125,7 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="LM Speed: N/A"
+                android:text="LM Spd: 6m/s"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp" />
 
@@ -134,7 +134,7 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="RM Speed: N/A"
+                android:text="RM Spd: 5.1m/s"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp" />
 
@@ -150,7 +150,7 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="LM Temp: N/A"
+                android:text="LM Temp: 38°"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp" />
 
@@ -159,7 +159,7 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="RM Temp: N/A"
+                android:text="RM Temp: 37°"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp" />
 
@@ -175,7 +175,7 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Bat Level: N/A"
+                android:text="Bat Level: 80%"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp" />
 
@@ -184,7 +184,7 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Bat Voltage: N/A"
+                android:text="Bat Voltage: 46V"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp" />
 
@@ -200,7 +200,7 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Bat Temp: N/A"
+                android:text="Bat Temp: 30°C"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp" />
 
@@ -209,7 +209,7 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Bat Smoke: N/A"
+                android:text="Bat Smoke: 0%"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp" />
 
@@ -225,7 +225,7 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Distance: N/A"
+                android:text="Distance: 500m"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp" />
 
@@ -234,7 +234,7 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Out Temp: N/A"
+                android:text="Out Temp: 28°C"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp" />
 
@@ -250,7 +250,7 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ping: N/A"
+                android:text="Ping: 180ms"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp" />
 
@@ -259,7 +259,7 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Sys Time: N/A"
+                android:text="Sys Time: 7m"
                 android:textColor="#FFFFFF"
                 android:textSize="22sp" />
 

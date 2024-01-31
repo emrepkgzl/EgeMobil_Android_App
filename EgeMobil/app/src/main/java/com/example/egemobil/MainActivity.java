@@ -24,6 +24,7 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static MainActivity instance;
     private static final String BROKER_URL = "tcp://test.mosquitto.org:1883";
     private static final String CLIENT_ID = "EGEMOBIL";
     //private static final String TOPIC = "EGEMOBIL/speed";
@@ -33,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
     private MqttAndroidClient client;
     public static String arrivedMessage;
 
-    private static ImageButton button1, button3;
+    private static ImageButton button1, button2, button3;
 
     public static TextView txtSpeed, txtAngle, txtAcclr, txtBrake, txtLMSpeed, txtRMSpeed, txtLMTemp,
             txtRMTemp, txtBatLvl, txtBatVol, txtBatTemp, txtBatSmk, txtDistnc, txtOTemp, txtPing, txtSysTime;
-    private static  boolean isConnected = false;
+    public static  boolean isConnected = false;
     private Timer timer;
     public static String topicToSend = "";
     public static String messageToSend = "";
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         button1 = findViewById(R.id.imageButton4);
+        button2 = findViewById(R.id.imageButton5);
         button3 = findViewById(R.id.imageButton6);
         txtSpeed = findViewById(R.id.textView2);
         txtAngle = findViewById(R.id.textView3);
@@ -121,7 +123,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        final Intent intent = new Intent(MainActivity.this, Map.class);
+                        startActivity(intent);
+                    }
+                }, 0);
+
+            }
+        });
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void conectX()
+    public void conectX()
     {
 
         try {
@@ -219,22 +234,22 @@ public class MainActivity extends AppCompatActivity {
                     Log.d(TAG, "message: " + msg);
 
                     switch(topic) {
-                        case "EGEMOBIL/speed": txtSpeed.setText("Speed: " + msg); break;
-                        case "EGEMOBIL/angle": txtAngle.setText("Angle: " + msg); break;
-                        case "EGEMOBIL/acclr": txtAcclr.setText("Acclr: " + msg); break;
-                        case "EGEMOBIL/brake": txtBrake.setText("Brake: " + msg); break;
-                        case "EGEMOBIL/lmspeed": txtLMSpeed.setText("LM Speed :" + msg); break;
-                        case "EGEMOBIL/rmspeed": txtRMSpeed.setText("RM Speed: " + msg); break;
-                        case "EGEMOBIL/lmtemp": txtLMTemp.setText("LM Temp: " + msg); break;
-                        case "EGEMOBIL/rmtemp": txtRMTemp.setText("RM Tempd: " + msg); break;
-                        case "EGEMOBIL/batlvl": txtBatLvl.setText("Bat Level: " + msg); break;
-                        case "EGEMOBIL/batvol": txtBatVol.setText("Bat Voltage: " + msg); break;
-                        case "EGEMOBIL/battemp": txtBatTemp.setText("Bat Temp: " + msg); break;
-                        case "EGEMOBIL/batsmoke": txtBatSmk.setText("Bat Smoke: " + msg); break;
-                        case "EGEMOBIL/distnc": txtDistnc.setText("Distance: " + msg); break;
-                        case "EGEMOBIL/otemp": txtOTemp.setText("Out Temp: " + msg); break;
-                        case "EGEMOBIL/ping": txtPing.setText("Ping: " + msg); break;
-                        case "EGEMOBIL/systime": txtSysTime.setText("Sys Time: " + msg); break;
+                        case "EGEMOBIL/speed": txtSpeed.setText("Speed: " + msg + "km/h"); break;
+                        case "EGEMOBIL/angle": txtAngle.setText("Angle: " + msg + "°"); break;
+                        case "EGEMOBIL/acclr": txtAcclr.setText("Acclr: " + msg + "%"); break;
+                        case "EGEMOBIL/brake": txtBrake.setText("Brake: " + msg + "%"); break;
+                        case "EGEMOBIL/lmspeed": txtLMSpeed.setText("LM Speed :" + msg + "m/s"); break;
+                        case "EGEMOBIL/rmspeed": txtRMSpeed.setText("RM Speed: " + msg + "m/s"); break;
+                        case "EGEMOBIL/lmtemp": txtLMTemp.setText("LM Temp: " + msg + "°C"); break;
+                        case "EGEMOBIL/rmtemp": txtRMTemp.setText("RM Tempd: " + msg + "°C"); break;
+                        case "EGEMOBIL/batlvl": txtBatLvl.setText("Bat Level: " + msg + "%"); break;
+                        case "EGEMOBIL/batvol": txtBatVol.setText("Bat Voltage: " + msg + "V"); break;
+                        case "EGEMOBIL/battemp": txtBatTemp.setText("Bat Temp: " + msg + "°C"); break;
+                        case "EGEMOBIL/batsmoke": txtBatSmk.setText("Bat Smoke: " + msg + "%"); break;
+                        case "EGEMOBIL/distnc": txtDistnc.setText("Distance: " + msg + "m"); break;
+                        case "EGEMOBIL/otemp": txtOTemp.setText("Out Temp: " + msg + "°C"); break;
+                        case "EGEMOBIL/ping": txtPing.setText("Ping: " + msg + "ms"); break;
+                        case "EGEMOBIL/systime": txtSysTime.setText("Sys Time: " + msg + "m"); break;
                     }
                 }
 
@@ -256,6 +271,10 @@ public class MainActivity extends AppCompatActivity {
         } catch (MqttException e) {
             e.printStackTrace();
         }
+    }
+
+    public static MainActivity getInstance() {
+        return instance;
     }
 
 }
